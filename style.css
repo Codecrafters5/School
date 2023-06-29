@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap');
+* {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  align-items: center;
+  margin: 0;
+  text-decoration: none;
+  transition: 1s;
+  color: #111;
+  font-weight: 500;
+  padding: 0;
+}
+.nav {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  border-bottom: 2px steelblue solid;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: steelblue;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+button {
+  width: 80px;
+  height: 25px;
+  background: none;
+  margin-top: 10px;
+  color: steelblue;
+  border: 2px steelblue solid;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+  p{
+    font-size: 13px;
+  }
+  .landing img {
+    width: 400px;
+  }
+  .about img{
+    width: 200px;
+  }
+  .about p{
+    font-size: 12px
+  }
+  header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  select{
+    margin-left: 240px;
+    margin-top: 5px;
+  }
+}
+option{
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+select{
+  border: 1px solid steelblue;
+  padding: 2px 2px;
+  border-radius: 3px;
+  background: steelblue;
+  color: #fff;
+}
+button:hover {
+  color: #fff;
+  background: steelblue;
+}
+
+.sb {
+  background: ghostwhite;
+  display: none;
+  bottom: 0;
+  color: #fff;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+}
+
+#show {
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.sb a{
+  color: black;
+}
+
+header {
+  border-bottom: 1px steelblue solid;
+  height: 70px;
+  display: flex;
+}
+
+@media (max-width: 1440px) {
+  header {
+    display: none;
+  }
+}
+.nav h1{
+  color: steelblue;
+}
+.landing{
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.about{
+  padding: 5px 5px 5px;
+}
+.about p{
+  margin-left: 15px;
+}
+.map{
+  height: 300px;
+  border-radius: 3px;
+  border: 1.50px steelblue solid;
+}
+input{
+  border: none;
+  height: 25px;
+  width: 250px;
+  margin-top: 7px;
+  border-bottom: 2px steelblue solid;
+}
+::placeholder{
+  color: steelblue;
+ position: absolute;
+ margin-left: 150px;
+}
+textarea{
+  border: 2px steelblue solid;
+  height: 100px;
+  width: 250px;
+  margin-top: 10px;
+}
+footer{
+  height: 100px;
+  background: #111;
+}
+footer a{
+  color: dodgerblue;
+  text-decoration: underline;
+}
+html{
+  scroll-behavior: smooth;
+}
+.card{
+  background-image: url(goal.jpg);
+  border-radius: 2px;
+  height: 220px;
+  background-size: 100%;
+  padding: 5px 5px;
+  border: 1px steelblue solid;
+  width: 220px;
+}

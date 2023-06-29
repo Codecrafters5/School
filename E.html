@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap');
+* {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  align-items: center;
+  margin: 0;
+  text-decoration: none;
+  transition: 1s;
+  color: #111;
+  font-weight: 500;
+  padding: 0;
+}
+.nav {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  border-bottom: 2px steelblue solid;
+}
+::placeholder{
+  position: absolute;
+  margin-left: 5px;
+  color: steelblue;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: steelblue;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+button {
+  width: 80px;
+  height: 25px;
+  background: none;
+  margin-top: 10px;
+  color: steelblue;
+  border: 2px steelblue solid;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+  p{
+    font-size: 13px;
+  }
+  .landing img {
+    width: 400px;
+  }
+  .about img{
+    width: 200px;
+  }
+  .about p{
+    font-size: 12px
+  }
+  header {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  select{
+    margin-left: 240px;
+    margin-top: 5px;
+  }
+}
+option{
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+select{
+  border: 1px solid steelblue;
+  padding: 2px 2px;
+  border-radius: 3px;
+  background: steelblue;
+  color: #fff;
+}
+button:hover {
+  color: #fff;
+  background: steelblue;
+}
+
+.sb {
+  background: ghostwhite;
+  display: none;
+  bottom: 0;
+  color: #fff;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+}
+
+#show {
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.sb a{
+  color: black;
+}
+
+header {
+  border-bottom: 1px steelblue solid;
+  height: 70px;
+  display: flex;
+}
+
+@media (max-width: 1440px) {
+  header {
+    display: none;
+  }
+}
+.nav h1{
+  color: steelblue;
+}
+.landing{
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.about{
+  padding: 5px 5px 5px;
+}
+.about p{
+  margin-left: 15px;
+}
+.map{
+  height: 300px;
+  border-radius: 3px;
+  border: 1.50px steelblue solid;
+}
+input{
+  border: none;
+  height: 25px;
+  width: 250px;
+  margin-top: 7px;
+  border-bottom: 2px steelblue solid;
+}
+textarea{
+  border: 2px steelblue solid;
+  height: 100px;
+  width: 250px;
+  margin-top: 10px;
+}
+footer{
+  height: 100px;
+  background: #111;
+}
+footer a{
+  color: dodgerblue;
+  text-decoration: underline;
+}
+html{
+  scroll-behavior: smooth;
+}
+.card{
+  background-image: url(goal.jpg);
+  border-radius: 2px;
+  height: 220px;
+  background-size: 100%;
+  padding: 5px 5px;
+  border: 1px steelblue solid;
+  width: 220px;
+}
+  </style>
+  <script src="jq.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#show").click(function() {
+        $("#sb").fadeIn(10);
+      });
+      $("#h").click(function() {
+        $("#sb").fadeOut(10);
+      });
+$("select").change(function() {
+  var selectedOption = $(this).children("option:selected").val();
+  if (selectedOption === "1") {
+    window.location.href = "index.html";
+  }
+});
+    });
+  </script>
+</head>
+<body>
+  <header>
+  <div id="show" style="cursor:pointer;margin-left:20px;">
+    <ul>
+    <div style="border-bottom:4px steelblue solid;width:27px;"></div>
+    <div style="border-bottom:4px steelblue solid;width:20px;margin-top: 5px;"></div>
+    <div style="border-bottom:4px steelblue solid;width:27px;margin-top: 5px;"></div>      
+    </ul>
+  </div>
+<select name="" id="">
+  <option value="1">English</option>
+  <a href="index.html"><option value="1">العربية</option></a>
+</select>
+  <br>
+  </header>
+<br>
+<div align="center" class="sb" id="sb">
+  <br><br>
+  <h1 id="h" style="cursor:pointer;color:steelblue;left: 12px;position:absolute;font-family:sans-seirf;">x</h1>
+  <br>
+  <ul>
+    <br>
+    <img src="logo.png" style="width:200px;">
+    <br>
+    <h2 style="color:steelblue;">Omar Ibn El khatab</h2>
+    <br>
+    <a class="hover-underline-animation" href="#">Home</a><br>
+    <br>
+    <a class="hover-underline-animation" href="#about">About us</a><br><br>
+ <a class="hover-underline-animation" href="#goal">Goal</a><br><br>
+ <a class="hover-underline-animation" href="#p">Place</a><br><br>
+ <a class="hover-underline-animation" href="#contact">Contact us</a><br><br>
+ <a href="#"><button style="width:90px">Login</button></a>
+  </ul>
+  <br>
+  <br>
+</div>
+  <nav class="nav">
+        <h2 style="color:steelblue;">Omar Ibn El khatab</h2>
+    <br>
+    <a class="hover-underline-animation" href="#">Home</a><br>
+    <br>
+    <a class="hover-underline-animation" href="#about">About us</a>
+ <a class="hover-underline-animation" href="#p">Place</a><br><br>
+ <a class="hover-underline-animation" href="#contact">Contact us</a>
+ <select name="" id="">
+   <option value="1">English</option>
+   <option value="1">العربية</option>
+ </select>
+ <a style="bottom:5px;" href="#"><button style="width:90px">Login</button></a>
+    </nav>
+  <div align="center" class="landing">
+    <ul>
+      <center>
+        <h2>Welcome to Omar Ibn El Khattab Official Language School</h2>
+         <a href="#"><button>Learn More</button></a>
+      </center>
+    </ul>
+    <img src="img.png" width="300px">
+  </div>
+  <br>
+  <h1 id="about" style="margin-right:20px;color: steelblue;" align="center">About us</h1>
+  <div class="about" style="display:flex;align-items:center;justify-content: space-around;">
+    <img src="bg.jpg" style="border-radius:2px" width="250px">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore adipisci nesciunt itaque amet rem, repellendus earum iure facere sed temporibus.</p>
+  </div><br>
+ <div align="center" id="goal" class="goal">
+   <div class="card"><br>
+     <h2>Our goal</h2><br>
+     <p>Our goal is to build a generation of geniuses and strive to make students learn with understanding.
+</p>
+   </div>
+  <br>
+  <h1 id="p" style="color:steelblue;" align="center">Our place</h1>
+  <center>
+<iframe align="center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.7702853904757!2d31.4815013!3d30.243626600000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458051a20fa9265%3A0x721af0e7bf29cfee!2sOmar%20Ibn%20Khattab%20school!5e0!3m2!1sen!2seg!4v1687984050599!5m2!1sen!2seg" width="400" height="" class="map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</center>
+<br><br>
+<center>
+  <h1 id="contact">Contact us</h1>
+  <input type="email" placeholder="  Email"><br>
+  <input type="text" placeholder=" full name"><br>
+  <textarea placeholder=" your massage"></textarea><br>
+  <button>Submit</button>
+</center>
+<br>
+<footer style="height: 100px;
+background: #111;" align="center">
+  <h3 style="color:#fff">Copyright By <a href="https://mohamedwaleeddd.github.io/Memo_Portfolio/">Mohamed Waleed</a>.</h3>
+</footer>
+</body>
+</html>
